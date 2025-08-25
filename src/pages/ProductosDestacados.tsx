@@ -51,7 +51,7 @@ useEffect(() => {
 } */
 
 import { useState } from 'react';
-import { Search, Heart, Share2, Eye, Car, Wrench, DollarSign, Gavel } from 'lucide-react';
+import { Heart, Share2, Eye, Car, Wrench, DollarSign, Gavel } from 'lucide-react';
 import '../ProductosDestacados.css';
 
 function ProductosDestacados() {
