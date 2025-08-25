@@ -139,7 +139,7 @@ function ProductosDestacados() {
     switch (status) {
       case 'Reparado': return <Wrench size={16} />;
       case 'Chocado': return <Car size={16} />;
-      case 'Subasta': return <Gavel size={16} />; // Cambiado a Gavel
+   
       default: return <DollarSign size={16} />;
     }
   };
@@ -148,7 +148,7 @@ function ProductosDestacados() {
     switch (status) {
       case 'Reparado': return '#10b981';
       case 'Chocado': return '#ef4444';
-      case 'Subasta': return '#f59e0b';
+
       default: return '#6b7280';
     }
   };

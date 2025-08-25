@@ -15,7 +15,8 @@ function App() {
       
       {/* Contenido principal con margen superior para el header fijo */}
       <main className="flex-grow container mx-auto px-4 mt-28 md:mt-32 pb-16 space-y-16">
-        <DatosNegocioPage />
+      {/*   <DatosNegocioPage /> */}
+      <br /><br /><br />
         <ProductosDestacados />
         <MarcasAutopartes />
         <Categorias />
