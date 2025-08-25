@@ -1,0 +1,28 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 40px;
+  padding: 0 20px;
+}
+
+/* Asegurar que el contenido no quede detrás del header */
+body {
+  padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 100px;
+  }
+  
+  body {
+    padding-top: 100px;
+  }
+}
