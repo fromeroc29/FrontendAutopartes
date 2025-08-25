@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail, Phone, MapPin,Calendar,CalendarOff,Clock, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin,Calendar,CalendarOff, MessageCircle } from 'lucide-react';
 
 import '../Footer.css';
 
