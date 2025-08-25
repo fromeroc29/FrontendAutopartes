@@ -1,4 +1,4 @@
-import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
+import { MapPin, Navigation, Phone } from 'lucide-react';
 import { useState } from 'react';
 import '../Ubicacion.css'; // Importamos el CSS por separado
 
