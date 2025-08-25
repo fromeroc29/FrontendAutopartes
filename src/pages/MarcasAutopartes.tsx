@@ -26,14 +26,15 @@ export default function MarcasAutopartesPage() {
 
 } */
 
-
 import { useState } from 'react';
-import { Search, X } from 'lucide-react';
+import { Search, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import '../MarcasAutopartes.css';
 
 function MarcasAutopartes() {
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const brandsPerPage = 4;
 
   const brands = [
     { 
@@ -122,6 +123,12 @@ function MarcasAutopartes() {
     }
   ];
 
+  // Calcular marcas para la página actual
+  const indexOfLastBrand = currentPage * brandsPerPage;
+  const indexOfFirstBrand = indexOfLastBrand - brandsPerPage;
+  const currentBrands = brands.slice(indexOfFirstBrand, indexOfLastBrand);
+  const totalPages = Math.ceil(brands.length / brandsPerPage);
+
   const openModal = (brand: string) => {
     setSelectedBrand(brand);
     setSearchTerm('');
@@ -134,8 +141,23 @@ function MarcasAutopartes() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Buscando productos de', selectedBrand, ':', searchTerm);
-    // Aquí iría la lógica de búsqueda real
     closeModal();
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const goToPage = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -147,7 +169,7 @@ function MarcasAutopartes() {
         </p>
 
         <div className="marcas-grid">
-          {brands.map((brand) => (
+          {currentBrands.map((brand) => (
             <div
               key={brand.id}
               className="marca-card"
@@ -160,6 +182,39 @@ function MarcasAutopartes() {
               <button className="marca-btn">Ver productos</button>
             </div>
           ))}
+        </div>
+
+        {/* Paginación */}
+        <div className="pagination-container">
+          <button 
+            onClick={prevPage} 
+            disabled={currentPage === 1}
+            className="pagination-btn pagination-prev"
+          >
+            <ChevronLeft size={20} />
+            Anterior
+          </button>
+          
+          <div className="pagination-numbers">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+              <button
+                key={pageNumber}
+                onClick={() => goToPage(pageNumber)}
+                className={`pagination-number ${currentPage === pageNumber ? 'active' : ''}`}
+              >
+                {pageNumber}
+              </button>
+            ))}
+          </div>
+          
+          <button 
+            onClick={nextPage} 
+            disabled={currentPage === totalPages}
+            className="pagination-btn pagination-next"
+          >
+            Siguiente
+            <ChevronRight size={20} />
+          </button>
         </div>
 
         {/* Modal de búsqueda */}
