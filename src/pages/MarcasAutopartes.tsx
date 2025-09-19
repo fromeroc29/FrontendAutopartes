@@ -1,30 +1,3 @@
-/* import { useEffect, useState } from "react";
-import api from "../api/cliente";
-
-
-interface MarcasAutopartes {
-  nombre: string;
-  visible?: boolean;               // opcional, por defecto true
-  fecha_creacion?: string;         // timestamp como string
-  fecha_modificacion?: string | null;
-  usuario_creacion?: string | null;
-  usuario_modificacion?: string | null;
-}
-
-export default function MarcasAutopartesPage() {
-
-
-
-
- return (
-<div>
-  <h1>Marcas Autopartes</h1>
-  
-</div>
-);
-
-
-} */
 
 import { useState } from 'react';
 import { Search, X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -161,8 +134,10 @@ function MarcasAutopartes() {
   };
 
   return (
+    
     <section id="marcas" className="marcas-section">
       <div className="marcas-container">
+        <p>pruebas</p>
         <h2>Marcas de Autopartes</h2>
         <p className="marcas-subtitle">
           Las mejores marcas internacionales con garantía de calidad

@@ -12,7 +12,7 @@
 
 .location-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .location-header h2 {
@@ -28,7 +28,7 @@
 .location-header h2::after {
   content: '';
   display: block;
-  width: 80px;
+  width: 380px;
   height: 4px;
   background: #ff0000;
   margin: 15px auto 0;
@@ -84,11 +84,11 @@
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  height: 100%;
+  height: 87%;
 }
 
 .location-info-card h3 {
-  color: #333;
+  color: #030303;
   margin-bottom: 30px;
   font-size: 1.8rem;
   text-align: center;
@@ -99,7 +99,7 @@
 .location-info-card h3::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 325px;
   height: 3px;
   background: #ff0000;
   margin: 10px auto 0;
@@ -158,7 +158,7 @@
 }
 
 .nav-btn {
-  background: #ff0000;
+  background: #4285F4;
   color: white;
 }
 
@@ -169,7 +169,7 @@
 }
 
 .whatsapp-btn {
-  background: #25d366;
+  background: #FF6D00;
   color: white;
 }
 

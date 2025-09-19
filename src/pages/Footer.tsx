@@ -4,6 +4,8 @@ import '../Footer.css';
 
 function Footer() {
 
+  
+
 const contactInfo = {
   phone: "+525576969710",
   email: "autoparteshrr@hotmail.com",
@@ -32,6 +34,10 @@ const contactInfo = {
   }
 };
 
+const telefono = contactInfo.socialMedia.whatsapp;
+const mensaje = "Hola, me interesa alguno de tus productos...";
+const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
 console.log("*******",contactInfo)
 
   return (
@@ -57,12 +63,12 @@ console.log("*******",contactInfo)
               <a href={contactInfo.socialMedia.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                 <Facebook size={25} />
               </a>
-              <a href={`https://wa.me/${contactInfo.socialMedia.whatsapp}`} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={25} /> {/* Icono de WhatsApp */}
+              <a href={url} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={25} />
               </a>
-              <a href={contactInfo.socialMedia.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+{/*               <a href={contactInfo.socialMedia.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram size={25} />
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -24,9 +24,9 @@ const LocationMap = () => {
             <MapPin size={32} className="icon-spacing" />
             Nuestra Ubicación
           </h2>
-          <p className="location-subtitle">
+          <strong><p className="location-subtitle">
             Visítanos en nuestro local, estamos para servirte
-          </p>
+          </p></strong>
         </div>
 
         <div className="location-content">
@@ -58,7 +58,7 @@ const LocationMap = () => {
               </div>
               <div className="info-content">
                 <h4>Dirección</h4>
-                <p>{businessLocation.address}</p>
+                <strong><p>{businessLocation.address}</p></strong>
               </div>
             </div>
 
@@ -79,8 +79,8 @@ const LocationMap = () => {
                 <Phone size={24} />
               </div>
               <div className="info-content">
-                <h4>Teléfono</h4>
-                <p>+52 55 7696 9710</p>
+                <h4>Teléfonos</h4>
+                <strong><p>+52 55 7696 9710, +52 55 73 46 80 47, +52 55 7696 9710</p></strong>
               </div>
             </div>
 

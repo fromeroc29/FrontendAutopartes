@@ -1,8 +1,9 @@
 /* Ofertas.css - Versión actualizada con imágenes y efecto hover */
 
 .ofertas-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 25px 0;
+  /*background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);*/
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   scroll-margin-top: 120px;
 }
 

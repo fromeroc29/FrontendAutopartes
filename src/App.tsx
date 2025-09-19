@@ -19,7 +19,7 @@ function App() {
       <br /><br /><br />
         <ProductosDestacados />
         <MarcasAutopartes />
-        <Categorias />
+        {/* <Categorias /> */}
         <Conocenos />
         <Ofertas />
         <LocationMap />

@@ -1,149 +1,256 @@
 .conocenos-section {
-  padding: 80px 0;
-  background-color: #f8f9fa;
-  scroll-margin-top: 120px; /* Para compensar el header fijo */
+  padding: 40px 0;
+  background: linear-gradient(135deg, #fafafa 0%, #f0f2f5 100%);
+  scroll-margin-top: 100px;
 }
 
 .conocenos-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .conocenos-section h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 40px;
-  position: relative;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
 .conocenos-section h2::after {
   content: '';
   display: block;
-  width: 80px;
-  height: 4px;
-  background: #ff0000;
-  margin: 15px auto 0;
+  width: 60px;
+  height: 3px;
+  background: #e74c3c;
+  margin: 12px auto 0;
+  border-radius: 2px;
 }
 
 .conocenos-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  margin-bottom: 60px;
+  grid-template-columns: 3fr 2fr;
+  gap: 35px;
+  margin-bottom: 45px;
+  align-items: start;
 }
 
 .conocenos-text h3 {
-  color: #333;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 25px 0 12px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-left: 4px solid #e74c3c;
+  padding-left: 12px;
 }
 
 .conocenos-text p {
-  line-height: 1.6;
+  line-height: 1.5;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
 }
 
 .conocenos-text ul {
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
 }
 
 .conocenos-text li {
   padding: 8px 0;
-  padding-left: 25px;
+  padding-left: 28px;
   position: relative;
   color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
 }
 
 .conocenos-text li::before {
-  content: '✓';
-  color: #ff0000;
+  content: '•';
+  color: #e74c3c;
   font-weight: bold;
+  font-size: 1.2rem;
   position: absolute;
-  left: 0;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.conocenos-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contact-info {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 4px solid #3498db;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.contact-info strong {
+  color: #2c3e50;
+  min-width: 80px;
+  display: inline-block;
 }
 
 .placeholder-image {
   width: 100%;
-  height: 300px;
-  background: #ddd;
-  border-radius: 8px;
+  height: 200px;
+  background: linear-gradient(135deg, #e0e0e0 0%, #eeeeee 100%);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #777;
   font-style: italic;
+  font-size: 0.9rem;
+  border: 2px dashed #ddd;
 }
 
 .team-section {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .team-section h3 {
   text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 40px;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 600;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
 .team-member {
   text-align: center;
   background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
 }
 
 .member-photo {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background: #eee;
-  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  margin: 0 auto 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #999;
+  font-size: 0.8rem;
+  border: 3px solid white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .team-member h4 {
-  margin: 15px 0 5px;
-  color: #333;
+  margin: 12px 0 6px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .team-member p {
-  color: #666;
+  color: #7f8c8d;
   margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Mejoras para los valores */
+.valores-list {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.valores-list li {
+  background: #f8f9fa;
+  padding: 12px 15px 12px 40px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border-left: 3px solid #e74c3c;
+}
+
+.valores-list li::before {
+  left: 15px;
+  color: #e74c3c;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .conocenos-content {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   
   .conocenos-section {
-    scroll-margin-top: 100px;
-    padding: 60px 0;
+    padding: 35px 0;
+    scroll-margin-top: 90px;
   }
   
   .conocenos-section h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    margin-bottom: 25px;
   }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .placeholder-image {
+    height: 220px;
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .conocenos-container {
+    padding: 0 15px;
+  }
+  
+  .conocenos-section h2 {
+    font-size: 1.7rem;
+  }
+  
+  .conocenos-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.placeholder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔹 se recorta, no se deforma */
+  border-radius: 10px; /* 🔹 sigue el borde redondeado del div */
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔹 ajusta la imagen dentro del círculo sin recortar */
+  border-radius: 50%;  /* 🔹 asegura que siga siendo circular */
 }

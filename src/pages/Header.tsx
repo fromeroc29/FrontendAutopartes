@@ -96,7 +96,7 @@ export default function Header() {
       </div>
 
       {/* Menú de navegación inferior */}
-      <nav className="header-nav" style={{ padding: '10px 0', backgroundColor: '#e7ddddff' }}>
+      <nav className="header-nav" style={{ padding: '2px 0', backgroundColor: '#e7ddddff' }}>
         <div className="nav-container">
           <a href="#productos" className="nav-link">Productos Destacados</a>
           <a href="#marcas" className="nav-link">Marcas</a>
@@ -141,6 +141,7 @@ export default function Header() {
           </div>
         </div>
       )}
+     
     </header>
   );
 }

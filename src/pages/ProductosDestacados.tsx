@@ -1,64 +1,58 @@
-/* import { useEffect, useState } from "react";
-import api from "../api/cliente";
-
-interface DatosNegocio {
-  id: number;
-  nombre_negocio: string;
-  propietario: string;
-  direccion: string;
-  ciudad: string;
-  correo_electronico: string;
-  codigo_postal: string;
-  redes_sociales: string;
-  sitio_web: string;
-
-}
-
-export default function DatosNegocioPage() {
-  
- const [datos, setDatos] = useState<DatosNegocio | null>(null);
-
-useEffect(() => {
-    const id = 1;
-    api.get<DatosNegocio>(`/datos_negocio/${id}`)
-      .then((res) => setDatos(res.data))
-      .catch((err) => console.error("Error al cargar datos:", err));
-  }, []);
-
-  console.log("datos:",datos)
-
- return (
-<div>
-  <h1>Productos destacados</h1> */
-    {/*}
-    {datos ? (
-    <div>
-      <p><strong>Nombre:</strong> {datos.nombre_negocio}</p>
-      <p><strong>Propietario:</strong> {datos.propietario}</p>
-      <p><strong>Correo:</strong> {datos.correo_electronico}</p>
-      <p><strong>Dirección:</strong> {datos.direccion}</p>
-      <p><strong>Ciudad:</strong> {datos.ciudad}</p>
-      <p><strong>C.P.:</strong> {datos.codigo_postal}</p>
-      <p><strong>Sitio Web:</strong> {datos.sitio_web}</p>
-      <p><strong>Redes Sociales:</strong> {datos.redes_sociales}</p>
-    </div>
-  ) : (
-    <p style={{ color: "red" }}>⚠️ No hay información cargada</p>
-  )}
-    */}
-/* </div>
-);
-} */
-
-import { useState } from 'react';
-import { Heart, Share2, Eye, Car, Wrench, DollarSign, Gavel } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { Heart, Share2, Eye, Car, Wrench, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
 import '../ProductosDestacados.css';
+import api from '../api/cliente';
 
 function ProductosDestacados() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [activeTab, setActiveTab] = useState('destacados');
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [showNavButtons, setShowNavButtons] = useState(false);
 
-  const featuredProducts = [
+interface Detalle{
+  id_detalle: number;
+  nombre_detalle: string;
+  valor_detalle: string;
+}
+
+interface Marca {
+  id_marca_vehiculo: number;
+  nombre: string;
+}
+
+interface Modelo {
+  id_modelo_vehiculo: number;
+  nombre: string;
+}
+
+interface Auto {
+  id_auto: number;
+  anio: number;
+  descripcion?: string;
+  precio: number;
+  moneda?: string;
+  imagen?: string;
+  status?: string;
+  categoria?: string;
+  detalles?: string;
+  marca: Marca;
+  modelo: Modelo;
+  detalles_rel:Detalle[];
+}
+
+const [datos, setDatos] = useState<Auto[] | null>(null);
+
+useEffect(() => {
+  api.get<Auto[]>(`/datos_negocio/autos/?skip=0&limit=10`)
+    .then((res) => setDatos(res.data))
+    .catch((err) => console.error("Error al cargar datos:", err));
+}, []);
+
+  console.log("*autos",datos)
+
+
+
+const featuredProducts = [
     {
       id: 1,
       title: 'Toyota Corolla 2022',
@@ -125,7 +119,34 @@ function ProductosDestacados() {
       features: ['Motor 5.0L', 'Daño lateral', 'Proyecto único'],
       details: 'Ford Mustang 2021 con daño lateral. Motor 5.0L V8 en perfecto estado.'
     }
-  ];
+  ]; 
+
+  // Efecto para verificar si hay overflow (necesidad de botones de navegación)
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (carouselRef.current) {
+        const hasOverflow = carouselRef.current.scrollWidth > carouselRef.current.clientWidth;
+        setShowNavButtons(hasOverflow);
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [activeTab]);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
 
   const openModal = (product: any) => {
     setSelectedProduct(product);
@@ -139,7 +160,6 @@ function ProductosDestacados() {
     switch (status) {
       case 'Reparado': return <Wrench size={16} />;
       case 'Chocado': return <Car size={16} />;
-   
       default: return <DollarSign size={16} />;
     }
   };
@@ -148,7 +168,6 @@ function ProductosDestacados() {
     switch (status) {
       case 'Reparado': return '#10b981';
       case 'Chocado': return '#ef4444';
-
       default: return '#6b7280';
     }
   };
@@ -158,7 +177,7 @@ function ProductosDestacados() {
       <div className="productos-container">
         <h2>Vehículos</h2>
         <p className="productos-subtitle">
-          Encuentra autos chocados para reparar y vehículos reparados.
+          Autos de subasta para reparar o ya reparados.
         </p>
 
         {/* Filtros por categoría */}
@@ -181,129 +200,145 @@ function ProductosDestacados() {
           >
             <Wrench size={18} /> Reparados
           </button>
-{/*           <button 
-            className={`filtro-btn ${activeTab === 'subasta' ? 'active' : ''}`}
-            onClick={() => setActiveTab('subasta')}
-          >
-            <Gavel size={18} /> Subasta 
-          </button> */}
         </div>
 
-        <div className="productos-grid">
-          {featuredProducts
-            .filter(product => activeTab === 'destacados' || product.status === activeTab)
-            .map((product) => (
-            <div key={product.id} className="producto-card">
-              <div className="producto-image">
-                <div className="producto-emoji">{product.image}</div>
-                <div 
-                  className="producto-status"
-                  style={{ backgroundColor: getStatusColor(product.status) }}
-                >
-                  {getStatusIcon(product.status)}
-                  <span>{product.status}</span>
-                </div>
-                <div className="producto-actions">
-                  <button className="action-btn">
-                    <Heart size={18} />
-                  </button>
-                  <button className="action-btn">
-                    <Share2 size={18} />
-                  </button>
-                </div>
-              </div>
+        <div className="carousel-container">
+          {showNavButtons && (
+            <button className="carousel-btn carousel-btn-left" onClick={scrollLeft}>
+              &#8249;
+              <ChevronLeft size={24} />
+            </button>
+          )}
+          
 
-              <div className="producto-content">
-                <h3>{product.title}</h3>
-                <p className="producto-desc">{product.description}</p>
-                
-                <div className="producto-features">
-                  {product.features.slice(0, 2).map((feature, index) => (
-                    <span key={index} className="feature-tag">{feature}</span>
-                  ))}
-                </div>
-
-                <div className="producto-footer">
-                  <span className="producto-price">{product.price}</span>
-                  <button 
-                    className="ver-detalles-btn"
-                    onClick={() => openModal(product)}
+        <div className="productos-carousel" ref={carouselRef}>
+            {(!datos) ? (
+                <p>Cargando productos...</p>   
+              ) : datos.length === 0 ? (
+                <p>No hay productos disponibles.</p>   
+              ) : (
+                datos
+              .filter(product => activeTab === 'destacados' || product.status === activeTab)
+              .map((product) => (
+              <div key={product.id_auto} className="producto-card">
+                <div className="producto-image">
+                  <div className="producto-emoji">{product.categoria}</div>
+                   <div 
+                    className="producto-status"
+                    style={{ backgroundColor: getStatusColor(product.status) }}
                   >
-                    <Eye size={16} />
-                    Ver detalles
-                  </button>
+                    {getStatusIcon(product.status)}
+                    <span>{product.status}</span>
+                  </div> 
+                  <div className="producto-actions">
+                    <button className="action-btn">
+                      <Heart size={18} />
+                    </button>
+                    <button className="action-btn">
+                      <Share2 size={18} />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="producto-content">
+                  <h3>{product.marca.nombre} {product.modelo.nombre} {product.anio}</h3>
+                  <p className="producto-desc">{product.descripcion}</p>
+                  
+                  <div className="producto-features">
+                    {product.detalles_rel.slice(0, 2).map((detalle) => (
+                      <span key={detalle.id_detalle} className="feature-tag">{detalle.nombre_detalle + ': ' + detalle.valor_detalle}</span>
+                    ))}
+                  </div>
+
+                  <div className="producto-footer">
+                    <span className="producto-price">
+                      {"$"}{product.precio.toLocaleString('es-MX')} {product.moneda}
+                    </span>
+                    <button 
+                      className="ver-detalles-btn"
+                      onClick={() => openModal(product)}
+                    >
+                      <Eye size={22} />
+                      Detalles
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+           )} 
+          </div> 
+          
+          {showNavButtons && (
+            <button className="carousel-btn carousel-btn-right" onClick={scrollRight}>
+              &#8250;
+              <ChevronRight size={24} />
+            </button>
+          )}
+        
         </div>
 
-        {/* Modal de detalles */}
+        {/* Modal de detalles (igual que antes) */}
         {selectedProduct && (
-          <div className="modal-overlay" onClick={closeModal}>
-            <div className="modal-content producto-modal" onClick={(e) => e.stopPropagation()}>
-              <div className="modal-header">
-                <h3>{selectedProduct.title}</h3>
-                <button className="modal-close" onClick={closeModal}>
-                  × {/* Reemplazado el ícono X */}
-                </button>
-              </div>
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content producto-modal" onClick={(e) => e.stopPropagation()}>
+            {/* Botón de cierre */}
+            <button className="modal-close" onClick={closeModal}>
+              ✖
+            </button>
+            <br />
+            {/* Imagen / Emoji */}
+            <div className="modal-image">
+              {/* <span className="producto-emoji">{selectedProduct.image}</span> */}
+              <p>el ferras</p>
+            </div>
 
-              <div className="modal-body">
-                <div className="producto-modal-content">
-                  <div className="modal-image">
-                    <div className="modal-emoji">{selectedProduct.image}</div>
-                    <div 
-                      className="modal-status"
-                      style={{ backgroundColor: getStatusColor(selectedProduct.status) }}
-                    >
-                      {getStatusIcon(selectedProduct.status)}
-                      <span>{selectedProduct.status}</span>
-                    </div>
-                  </div>
+            {/* Encabezado */}
+            <h2>
+              {selectedProduct.marca.nombre} {selectedProduct.modelo.nombre} {selectedProduct.anio}
+            </h2>
 
-                  <div className="modal-details">
-                    <div className="detail-group">
-                      <h4>Descripción</h4>
-                      <p>{selectedProduct.details}</p>
-                    </div>
-
-                    <div className="detail-group">
-                      <h4>Características</h4>
-                      <div className="features-list">
-                        {selectedProduct.features.map((feature: string, index: number) => (
-                          <span key={index} className="feature-item">
-                            ✓ {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="detail-group">
-                      <h4>Precio</h4>
-                      <div className="price-section">
-                        <span className="final-price">{selectedProduct.price}</span>
-                        <span className="price-note">Precio negociable</span>
-                      </div>
-                    </div>
-
-                    <div className="modal-actions">
-                      <button className="btn-secondary">
-                        <Share2 size={18} />
-                        Compartir
-                      </button>
-                      <button className="btn-primary">
-                        <DollarSign size={18} />
-                        Solicitar información
-                      </button>
-                    </div>
-                  </div>
+            {/* Tabla responsiva para estatus, categoría y precio */}
+            <div className="producto-info-table">
+              <div className="info-row">
+                <div className="info-cell">
+                  <strong>Estatus:</strong>
+                  <span>{selectedProduct.status}</span>
+                </div>
+                <div className="info-cell">
+                  <strong>Categoría:</strong>
+                  <span>{selectedProduct.categoria}</span>
+                </div>
+                <div className="info-cell">
+                  <strong>Precio:</strong>
+                  <span className="producto-price">
+                    {'$ '+selectedProduct.precio.toLocaleString('es-MX')} {selectedProduct.moneda}
+                  </span>
                 </div>
               </div>
             </div>
+
+            {/* Descripción */}
+            <p><strong>Descripción:</strong> {selectedProduct.descripcion}</p>
+
+            {/* Detalles */}
+            <p>
+              <strong>Detalles:</strong>
+              <span className="producto-features">
+                {selectedProduct.detalles_rel && selectedProduct.detalles_rel.length > 0 
+                  ? selectedProduct.detalles_rel.slice(0, 6).map((detalle) => (
+                      <span key={detalle.id_detalle} className="feature-tag">
+                        {detalle.nombre_detalle + ': ' + detalle.valor_detalle}
+                      </span>
+                    ))
+                  : <span className="no-details">Sin registros cargados</span>
+                }
+              </span>
+            </p>
           </div>
-        )}
+        </div>
+      )}
       </div>
+      
     </section>
   );
 }
