@@ -515,7 +515,7 @@ function ProductosDestacados() {
                 <strong>Detalles:</strong>
                 <span className="producto-features">
                   {selectedProduct.detalles_rel && selectedProduct.detalles_rel.length > 0 
-                    ? selectedProduct.detalles_rel.slice(0, 12).map((detalle) => (
+                    ? selectedProduct.detalles_rel.slice(0, 12).map((detalle:any) => (
                         <span key={detalle.id_detalle} className="feature-tag">
                           {detalle.nombre_detalle + ': ' + detalle.valor_detalle}
                         </span>

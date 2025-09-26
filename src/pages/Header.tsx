@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ShoppingCart, Phone, Search, User, Menu, X } from 'lucide-react';
+import {Search, Menu, X } from 'lucide-react';
 import '../Header.css';
 import toroLogo from '../assets/icons/toro.png';
 import aguilaLogo from '../assets/icons/aguila.png';

@@ -51,10 +51,10 @@ function Conocenos() {
       "valores": "✅ CALIDAD\nGarantizamos autopartes que cumplen con los más altos estándares de durabilidad y rendimiento.\n\n💪 COMPROMISO\nNos dedicamos a superar las expectativas de nuestros clientes y contribuir al éxito de sus vehículos.\n\n⚡ SERVICIO\nBrindamos atención personalizada, asesoría experta y soluciones rápidas y efectivas.",
       "visible": true,
       "usuario_creacion": "admin",
-      "usuario_modificacion": null,
+      "usuario_modificacion": "frc",
       "id_negocio": 1,
       "fecha_creacion": "2025-08-09T13:23:54.532713",
-      "fecha_modificacion": null
+      "fecha_modificacion": "frc"
     }
   ];
 
@@ -82,7 +82,7 @@ function Conocenos() {
     });
   };
 
-  const imagenes = [n1, n2, n3];
+  /* const imagenes = [n1, n2, n3]; */
 
   return (
     <section id="conocenos" className="conocenos-section">

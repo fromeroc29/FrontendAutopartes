@@ -1,5 +1,3 @@
-import { Facebook, Instagram, Mail, Phone, MapPin,Calendar,CalendarOff, MessageCircle } from 'lucide-react';
-
 import '../Footer.css';
 
 function Footer() {
@@ -34,9 +32,9 @@ const contactInfo = {
   }
 };
 
-const telefono = contactInfo.socialMedia.whatsapp;
-const mensaje = "Hola, me interesa alguno de tus productos...";
-const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+/* const telefono = contactInfo.socialMedia.whatsapp; */
+/* const mensaje = "Hola, me interesa alguno de tus productos..."; */
+/* const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`; */
 
 console.log("*******",contactInfo)
 

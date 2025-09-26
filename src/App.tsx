@@ -1,7 +1,7 @@
-import DatosNegocioPage from "./pages/DatosNegocio";
+
 import ProductosDestacados from "./pages/ProductosDestacados";
 import MarcasAutopartes from "./pages/MarcasAutopartes";
-import Categorias from "./pages/Categorias";
+
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";
 import Conocenos from "./pages/Conocenos";
