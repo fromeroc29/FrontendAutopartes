@@ -145,7 +145,7 @@
 }
 
 .member-photo {
-  width: 90px;
+  width: 110px;
   height: 90px;
   border-radius: 50%;
   background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
@@ -249,8 +249,8 @@
 }
 
 .member-photo img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: contain; /* 🔹 ajusta la imagen dentro del círculo sin recortar */
   border-radius: 50%;  /* 🔹 asegura que siga siendo circular */
 }

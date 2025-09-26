@@ -137,7 +137,6 @@ function MarcasAutopartes() {
     
     <section id="marcas" className="marcas-section">
       <div className="marcas-container">
-        <p>pruebas</p>
         <h2>Marcas de Autopartes</h2>
         <p className="marcas-subtitle">
           Las mejores marcas internacionales con garantía de calidad

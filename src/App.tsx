@@ -11,12 +11,14 @@ import LocationMap from "./pages/Ubicacion";
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <br />
+      <br />
       <Header />
       
       {/* Contenido principal con margen superior para el header fijo */}
       <main className="flex-grow container mx-auto px-4 mt-28 md:mt-32 pb-16 space-y-16">
       {/*   <DatosNegocioPage /> */}
-      <br /><br /><br />
+      <br /><br />
         <ProductosDestacados />
         <MarcasAutopartes />
         {/* <Categorias /> */}
@@ -24,7 +26,8 @@ function App() {
         <Ofertas />
         <LocationMap />
       </main>
-
+<br />
+<br />
       <Footer />
     </div>
   );

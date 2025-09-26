@@ -21,94 +21,51 @@ export default function Header() {
     <header className="header-allaudio">
       <div className="header-top-container">
         <div className="header-content">
-          {/* Logo a la izquierda */}
-          <div className="header-logo">
-            <button
-              className="mobile-menu-btn"
-              onClick={toggleMenu}
-              aria-label="Abrir menú"
-            >
-              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
+          {/* Botón de menú móvil */}
+          <button
+            className="mobile-menu-btn"
+            onClick={toggleMenu}
+            aria-label="Abrir menú"
+          >
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
 
+          {/* Contenedor del logo centrado */}
+<div className="logo-container">
+  <img
+    src={aguilaLogo}
+    alt="Logo Aguila"
+    className="aguila-logo"
+  />
+  <div className="logo-text">
+    <h1>Autopartes del <span className="red-text">Norte</span></h1>
+    <span>y</span>
+    <h1>Autopartes <span className="red-text">Tres</span> Hermanos</h1>
+  </div>
+  <img
+    src={toroLogo}
+    alt="Logo Toro"
+    className="toro-logo"
+  /> 
+</div>
 
-            <div className="logo-container">
-              {/* Imagen del toro - asegúrate de tener la ruta correcta */}
-              <img
-                src={toroLogo}
-                alt="Logo Toro"
-                className="toro-logo"
-              /> 
-              <h1>
-                Autopartes<span className="brand-accent"> Tres Hermanos</span>
-              </h1>
-            </div>
-          </div>
-
-          {/* Barra de búsqueda en el centro */}
-          <div className="header-search">
-            <form onSubmit={handleSearch} className="search-form">
-              <div className="search-box">
-                <input
-                  type="text"
-                  placeholder="Buscar autopartes, marcas..."
-                  className="search-input"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="search-btn"
-                  aria-label="Buscar"
-                >
-                  <Search size={18} />
-                </button>
-              </div>
-            </form>
-          </div>
-
-          {/* Iconos a la derecha */}
-          <div className="header-actions">
-            <a href="#contacto" className="action-item">
-              <Phone size={22} />
-              <span>Contacto</span>
-            </a>
-
-            <a href="#cuenta" className="action-item">
-              <User size={22} />
-              <span>Cuenta</span>
-            </a>
-
-            <button className="cart-btn">
-              <ShoppingCart size={22} />
-              <span>Carrito</span>
-              <span className="cart-count">3</span>
-            </button>
-          <img
-            src={aguilaLogo}
-            alt="Logo Aguila"
-            className="aguila-logo"
-          />
-          </div>
-
-
+          {/* Espacio vacío para balancear el botón de menú */}
+          <div className="header-spacer"></div>
         </div>
       </div>
 
-      {/* Menú de navegación inferior */}
-      <nav className="header-nav" style={{ padding: '2px 0', backgroundColor: '#e7ddddff' }}>
+      {/* Menú de navegación inferior - VISIBLE EN WEB */}
+      <nav className="header-nav">
         <div className="nav-container">
-          <a href="#productos" className="nav-link">Productos Destacados</a>
+          <a href="#productos" className="nav-link">Vehiculos</a>
           <a href="#marcas" className="nav-link">Marcas</a>
-          <a href="#categorias" className="nav-link">Categorías</a>
-          <a href="#ofertas" className="nav-link">Ofertas</a>
           <a href="#conocenos" className="nav-link">Conócenos</a>
-          <a href="#ubicacion" className="nav-link">Como llegar</a>
-
+          <a href="#ofertas" className="nav-link">Ofertas</a>
+          <a href="#ubicacion" className="nav-link">Información de contacto</a>
         </div>
       </nav>
 
-      {/* Menú móvil */}
+      {/* Menú móvil - SOLO VISIBLE EN MÓVIL */}
       {isMenuOpen && (
         <div className="mobile-menu">
           <div className="mobile-search">
@@ -129,19 +86,17 @@ export default function Header() {
           </div>
 
           <div className="mobile-nav">
-            <a href="#productos" className="mobile-nav-item">Productos Destacados</a>
+            <a href="#productos" className="mobile-nav-item">Vehiculos</a>
             <a href="#marcas" className="mobile-nav-item">Marcas</a>
-            <a href="#categorias" className="mobile-nav-item">Categorías</a>
-            <a href="#ofertas" className="mobile-nav-item">Ofertas</a>
             <a href="#conocenos" className="mobile-nav-item">Conócenos</a>
-            <a href="#ubicacion" className="mobile-nav-item">Como llegar</a>
-            <a href="#contacto" className="mobile-nav-item">
+            <a href="#ofertas" className="mobile-nav-item">Ofertas</a>
+            <a href="#ubicacion" className="mobile-nav-item">Información de contacto</a>
+            {/* <a href="#contacto" className="mobile-nav-item">
               <Phone size={16} /> Contacto
-            </a>
+            </a> */}
           </div>
         </div>
       )}
-     
     </header>
   );
 }
