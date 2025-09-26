@@ -45,7 +45,7 @@ function Conocenos() {
       "codigo_postal": "54946",
       "sitio_web": "https://www.autoparteselcamino.com",
       "redes_sociales": "Facebook: autoparteselcamino; Instagram: @autoparteselcamino",
-      "descripcion": "Nos especializamos en la venta de autopartes nuevas y usadas de la más alta calidad. Contamos con motores, transmisiones y refacciones para distintas marcas y modelos, siempre con precios competitivos y el respaldo de un servicio confiable.",
+      "descripcion": "Noss especializamos en la venta de autopartes nuevas y usadas de la más alta calidad. Contamos con motores, transmisiones y refacciones para distintas marcas y modelos, siempre con precios competitivos y el respaldo de un servicio confiable.",
       "vision": "Convertirnos en el proveedor número uno de autopartes de calidad, donde cada cliente encuentre exactamente lo que necesita con el respaldo de nuestro expertise y compromiso",
       "mision": "Proveer autopartes nuevas y usadas de la más alta calidad, ofreciendo precios competitivos y un servicio confiable que garantice la satisfacción de nuestros clientes. Nos especializamos en motores, transmisiones y refacciones para diversas marcas y modelos, asegurando que cada vehículo reciba lo mejor.",
       "valores": "✅ CALIDAD\nGarantizamos autopartes que cumplen con los más altos estándares de durabilidad y rendimiento.\n\n💪 COMPROMISO\nNos dedicamos a superar las expectativas de nuestros clientes y contribuir al éxito de sus vehículos.\n\n⚡ SERVICIO\nBrindamos atención personalizada, asesoría experta y soluciones rápidas y efectivas.",
