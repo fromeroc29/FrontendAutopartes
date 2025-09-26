@@ -137,6 +137,7 @@ function Conocenos() {
               <h4><b>{primerDato?.propietario?.split(' ')[0] || 'Juan'} {primerDato?.propietario?.split(' ')[1] || 'Pérez'}</b></h4>
               <p><b>Autopartes Tres Hermanos (Ventas)</b></p>
               <p><b>Telefono:  55 7696 9710</b></p>
+              <p><b>Telefono:  55</b></p>
             </div>
             <div className="team-member">
               <div className="member-photo">
