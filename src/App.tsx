@@ -1,6 +1,6 @@
 
 import ProductosDestacados from "./pages/ProductosDestacados";
-import MarcasAutopartes from "./pages/MarcasAutopartes";
+/* import MarcasAutopartes from "./pages/MarcasAutopartes"; */
 
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";

@@ -1,4 +1,4 @@
-import { MapPin, Phone, MessageCircle, Calendar, CalendarOff, Facebook, Instagram, Clock, Share2 } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Calendar, CalendarOff, Facebook, Clock, Share2 } from 'lucide-react';
 import '../Ubicacion.css';
 
 const LocationMap = () => {

@@ -4,7 +4,7 @@ import '../ProductosDestacados.css';
 import imgcharger from '../assets/vehi/char/1.jpg'
 import imgterrain from '../assets/vehi/terr/1.jpg'
 import imgnissan from '../assets/vehi/niss/1.jpg'
-import imgsentra from '../assets/vehi/sent/1.png'
+/* import imgsentra from '../assets/vehi/sent/1.png' */
 
 function ProductosDestacados() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
