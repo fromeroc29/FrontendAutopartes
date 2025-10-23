@@ -59,11 +59,10 @@ console.log("*******",contactInfo)
 <div className="footer-section">
   <h4>Navegación</h4>
   <ul className="two-columns">
+    <li><a href="#conocenos">Conócenos</a></li>
+    <li><a href="#ofertas">Nuestros Productos</a></li>
     <li><a href="#productos">Vehiculos</a></li>
-    <li><a href="#marcas">Marcas</a></li>
-    <li><a href="#categorias">Conócenos</a></li>
-    <li><a href="#ofertas">Ofertas</a></li>
-    <li><a href="#conocenos">Conocenos</a></li>
+    {/*<li><a href="#marcas">Marcas</a></li>*/}
     <li><a href="#ubicacion">Información de contacto</a></li>
   </ul>
 </div>

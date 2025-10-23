@@ -45,8 +45,71 @@ function ProductosDestacados() {
 
   // Datos en duro - reemplaza la llamada a la API
   const datos: Auto[] = [
-    {
+     {
       "id_auto": 1,
+      "anio": 2012,
+       "descripcion": "GMC Terrain SLT, 5 Pasajeros, proveniente del Estado de Qro. Méx.",
+      "precio": 170000,
+      "moneda": "MNX",
+      "imagen": imgterrain,
+      "status": "Reparado",
+      "categoria": "Proyecto",
+      "detalles": "Detalle en pintura del lado de salpicaderas",
+      "marca": {
+        "id_marca_vehiculo": 1,
+        "nombre": "GMC"
+      },
+      "modelo": {
+        "id_modelo_vehiculo": 1,
+        "nombre": "Terrain SLT"
+      },
+      "detalles_rel": [
+        {
+          "nombre_detalle": "Kilometraje",
+          "valor_detalle": "97,500 km",
+          "id_detalle": 1
+        },
+        {
+          "nombre_detalle": "Transmisión",
+          "valor_detalle": "Automática",
+          "id_detalle": 2
+        },
+        {
+          "nombre_detalle": "Color",
+          "valor_detalle": "Blanco Olimpico",
+          "id_detalle": 3
+        },
+        {
+          "nombre_detalle": "Combustible",
+          "valor_detalle": "Gasolina Premium",
+          "id_detalle": 4
+        },
+        {
+          "nombre_detalle": "Motor",
+          "valor_detalle": "V6 3.0L",
+          "id_detalle": 5
+        },
+        
+        {
+          "nombre_detalle": "Aditamento",
+          "valor_detalle": "Quemacocos",
+          "id_detalle": 6
+        },
+        
+        {
+          "nombre_detalle": "Interior",
+          "valor_detalle": "Cafe y Negro en piel",
+          "id_detalle": 7
+        },
+        {
+          "nombre_detalle": "Placas",
+          "valor_detalle": "MMR-978-A",
+          "id_detalle": 8
+        }
+      ]
+    },
+    {
+      "id_auto": 2,
       "anio": 2011,
       "descripcion": "Dodge Charger RT, 5 pasajeros, proveniente del estado de Chihuahua, Chih. Méx.",
       "precio": 110000,
@@ -117,121 +180,59 @@ function ProductosDestacados() {
         }
       ]
     },
-        {
-      "id_auto": 2,
-      "anio": 2012,
-       "descripcion": "GMC Terrain SLT, 5 Pasajeros, proveniente del estado de Qro. Méx.",
-      "precio": 170000,
-      "moneda": "MNX",
-      "imagen": imgterrain,
-      "status": "Reparado",
-      "categoria": "Proyecto",
-      "detalles": "Detalle en pintura del lado de salpicaderas",
-      "marca": {
-        "id_marca_vehiculo": 1,
-        "nombre": "GMC"
-      },
-      "modelo": {
-        "id_modelo_vehiculo": 1,
-        "nombre": "Terrain SLT"
-      },
-      "detalles_rel": [
-        {
-          "nombre_detalle": "Kilometraje",
-          "valor_detalle": "97,500 km",
-          "id_detalle": 1
-        },
-        {
-          "nombre_detalle": "Transmisión",
-          "valor_detalle": "Automática",
-          "id_detalle": 2
-        },
-        {
-          "nombre_detalle": "Color",
-          "valor_detalle": "Blanco Olimpico",
-          "id_detalle": 3
-        },
-        {
-          "nombre_detalle": "Combustible",
-          "valor_detalle": "Gasolina Premium",
-          "id_detalle": 4
-        },
-        {
-          "nombre_detalle": "Motor",
-          "valor_detalle": "V6 3.0L",
-          "id_detalle": 5
-        },
-        
-        {
-          "nombre_detalle": "Aditamento",
-          "valor_detalle": "Quemacocos",
-          "id_detalle": 6
-        },
-        
-        {
-          "nombre_detalle": "Interior",
-          "valor_detalle": "Cafe y Negro en piel",
-          "id_detalle": 7
-        },
-        {
-          "nombre_detalle": "Placas",
-          "valor_detalle": "PBL-44-64",
-          "id_detalle": 8
-        }
-      ]
-    },
+       
         {
       "id_auto": 3,
-      "anio": 2012,
-      "descripcion": "GMC Terrain SLT, 5 Pasajeros, proveniente del estado de Qro. Méx.",
-      "precio": 170000,
+      "anio": 2011,
+      "descripcion": "NP 300 PICK UP DIESEL 4x4, Edición Especial.",
+      "precio": 120000,
       "moneda": "MNX",
       "imagen": imgnissan,
-      "status": "Reparado",
+      "status": "para desarmar",
       "categoria": "Proyecto",
-      "detalles": "Detalle en pintura del lado de salpicaderas",
+      "detalles": "Detalle en punta izquierda",
       "marca": {
         "id_marca_vehiculo": 1,
-        "nombre": "GMC"
+        "nombre": "Nissan"
       },
       "modelo": {
         "id_modelo_vehiculo": 1,
-        "nombre": "Terrain SLT"
+        "nombre": "NP 300"
       },
       "detalles_rel": [
         {
           "nombre_detalle": "Kilometraje",
-          "valor_detalle": "97,500 km",
+          "valor_detalle": "N/A",
           "id_detalle": 1
         },
         {
           "nombre_detalle": "Transmisión",
-          "valor_detalle": "CVT",
+          "valor_detalle": "Manual",
           "id_detalle": 2
         },
         {
           "nombre_detalle": "Color",
-          "valor_detalle": "Gris Oxford",
+          "valor_detalle": "Rojo Sunred",
           "id_detalle": 3
         },
         {
           "nombre_detalle": "Combustible",
-          "valor_detalle": "Gasolina",
+          "valor_detalle": "Diesel",
           "id_detalle": 4
         },
         {
           "nombre_detalle": "Motor",
-          "valor_detalle": "1.6L",
+          "valor_detalle": "4 Cil",
           "id_detalle": 5
         },
         {
           "nombre_detalle": "Placas",
-          "valor_detalle": "ABC-123-CDMX",
+          "valor_detalle": "Documentos y última baja de placas.",
           "id_detalle": 6
         }
       ]
     },
-        {
+        /* {
       "id_auto": 4,
       "anio": 2012,
       "descripcion": "Camioneta, 5 Pasajeros, proveniente del estado de Qro.",
@@ -281,7 +282,7 @@ function ProductosDestacados() {
           "id_detalle": 6
         }
       ]
-    }
+    } */
     // ... el resto de los objetos igual que arriba
   ];
 

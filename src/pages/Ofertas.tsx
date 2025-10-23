@@ -1,67 +1,95 @@
 import '../Ofertas.css';
 import { useState, useEffect } from 'react';
+import tableros from '../assets/imagesBussines/Instrumentos.png';
+import asientos from '../assets/imagesBussines/Asientos.png'
+import faroscalaveras from '../assets/imagesBussines/FarosRetrovisores.png'
+import salpicadera from '../assets/imagesBussines/Salpicaderas1.png'
+import computadora from '../assets/imagesBussines/Computadoras2.png'
+import parrillas from '../assets/imagesBussines/parrillas.png'
+import defensas from '../assets/imagesBussines/Defensas1.png'
+import inyectores from '../assets/imagesBussines/SensoresInyectores.png'
 
 // Datos de las ofertas en un arreglo
 const ofertasData = [
   {
     id: 1,
-    descuento: "30% OFF",
-    categoria: "Frenos de Disco",
-    titulo: "Kit de Frenos Completo",
-    descripcion: "Discos, pastillas y pinzas para la mayoría de modelos",
+    descuento: "5% OFF",
+    categoria: "Tableros de instrumentos",
+    titulo: "Tableros de Instrumentos",
+    descripcion: "Para diversos modelos de automoviles y camionetas SUV o PicKup.",
     precioAnterior: 1200.00,
     precioNuevo: 840.00,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: tableros
   },
   {
     id: 2,
-    descuento: "25% OFF",
-    categoria: "Filtros",
-    titulo: "Paquete de Filtros",
-    descripcion: "Aceite, aire, combustible y habitáculo",
+    descuento: "5% OFF",
+    categoria: "Asientos",
+    titulo: "Asientos para autos y camionetas.",
+    descripcion: "Para autos y camionetas para adaptar.",
     precioAnterior: 800.00,
     precioNuevo: 600.00,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: asientos
   },
   {
     id: 3,
-    descuento: "40% OFF",
-    categoria: "Baterías",
-    titulo: "Batería Premium",
-    descripcion: "Batería de 60 meses de garantía",
+    descuento: "5% OFF",
+    categoria: "Faros, Calaveras y Retrovisores",
+    titulo: "Variedad de Faros, Calaveras y Retrovisores",
+    descripcion: "Faros, Calaveras y Retrovisores de autos y camionetas de modelos 80's, 90's y actuales.",
     precioAnterior: 2500.00,
     precioNuevo: 1500.00,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: faroscalaveras
   },
   {
     id: 4,
-    descuento: "15% OFF",
-    categoria: "Aceites",
-    titulo: "Aceite Sintético",
-    descripcion: "Aceite 100% sintético 5W-30",
+    descuento: "5% OFF",
+    categoria: "Salpicaderas",
+    titulo: "Salpicaderas para camionetas SUV o PickUp",
+    descripcion: "Diversidad de Salpicaderas de los añs 80´s, 90´s y actuales.",
     precioAnterior: 350.00,
     precioNuevo: 297.50,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: salpicadera
   },
   {
     id: 5,
-    descuento: "20% OFF",
-    categoria: "Amortiguadores",
-    titulo: "Juego de Amortiguadores",
-    descripcion: "Amortiguadores delanteros y traseros",
+    descuento: "5% OFF",
+    categoria: "Computadoras y Cajas de Fusibles",
+    titulo: "Cómputadoras y Cajas de Fusibles",
+    descripcion: "Variedad de modulos, Cómputadoras, Arneses de autos y camionetas.",
     precioAnterior: 3800.00,
     precioNuevo: 3040.00,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: computadora
   },
   {
     id: 6,
     descuento: "OFERTA EXCLUSIVA",
-    categoria: "Kit de Herramientas",
-    titulo: "Kit Mecánico Profesional",
-    descripcion: "124 piezas con estuche de almacenamiento",
+    categoria: "Variedad de parrillas",
+    titulo: "Parrillas, Fascias, Cuartos",
+    descripcion: "Variedad de parrillas y emblemas de diversos modelos.",
     precioAnterior: 4200.00,
     precioNuevo: 3360.00,
-    imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+    imagen: parrillas
+  },
+   {
+    id: 7,
+    descuento: "OFERTA EXCLUSIVA",
+    categoria: "Defensas Traseras",
+    titulo: "Defensas traseras",
+    descripcion: "Variedad de Defensas Traseras para camionetas.",
+    precioAnterior: 4200.00,
+    precioNuevo: 3360.00,
+    imagen: defensas
+  },
+   {
+    id: 8,
+    descuento: "OFERTA EXCLUSIVA",
+    categoria: "Sensores e Inyectores",
+    titulo: "Sensores e Inyectores.",
+    descripcion: "Variedad de sensores e inyectores usados de motores de choque",
+    precioAnterior: 4200.00,
+    precioNuevo: 3360.00,
+    imagen: inyectores
   }
 ];
 
@@ -108,8 +136,8 @@ function Ofertas() {
   return (
     <section id="ofertas" className="ofertas-section">
       <div className="ofertas-container">
-        <h2>Ofertas Especiales</h2>
-        <p className="ofertas-subtitle">Aprovecha nuestras promociones exclusivas por tiempo limitado</p>
+        <h2>Nuestros Productos</h2>
+        <p className="ofertas-subtitle">Pregunta por nuestras promociones...</p>
         
         <div className="ofertas-carousel-container">
           <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
@@ -133,11 +161,11 @@ function Ofertas() {
                 <div className="oferta-content">
                   <h3>{oferta.titulo}</h3>
                   <p className="oferta-desc">{oferta.descripcion}</p>
-                  <div className="oferta-pricing">
+{/*                   <div className="oferta-pricing">
                     <span className="old-price">${oferta.precioAnterior.toFixed(2)}</span>
                     <span className="new-price">${oferta.precioNuevo.toFixed(2)}</span>
-                  </div>
-                  <button className="oferta-btn">Agregar al Carrito</button>
+                  </div> */}
+                  {/* <button className="oferta-btn">Agregar al Carrito</button> */}
                 </div>
               </div>
             ))}
@@ -166,11 +194,7 @@ function Ofertas() {
               <h4>Tiempo Limitado</h4>
               <p>Todas nuestras ofertas tienen fecha de caducidad</p>
             </div>
-            <div className="info-item">
-              <div className="info-icon">🚚</div>
-              <h4>Envío Gratis</h4>
-              <p>En compras mayores a $1,500.00</p>
-            </div>
+            
             <div className="info-item">
               <div className="info-icon">↩️</div>
               <h4>Devoluciones</h4>

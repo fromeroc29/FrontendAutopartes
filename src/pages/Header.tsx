@@ -38,9 +38,7 @@ export default function Header() {
     className="aguila-logo"
   />
   <div className="logo-text">
-    <h1>Autopartes del <span className="red-text">Norte</span></h1>
-    <span>y</span>
-    <h1>Autopartes <span className="red-text">Tres</span> Hermanos</h1>
+    <h1>Autopartes del Norte y Tres Hermanos.</h1>
   </div>
   <img
     src={toroLogo}
@@ -57,11 +55,14 @@ export default function Header() {
       {/* Menú de navegación inferior - VISIBLE EN WEB */}
       <nav className="header-nav">
         <div className="nav-container">
-          <a href="#productos" className="nav-link">Vehiculos</a>
-          <a href="#marcas" className="nav-link">Marcas</a>
           <a href="#conocenos" className="nav-link">Conócenos</a>
-          <a href="#ofertas" className="nav-link">Ofertas</a>
+          <a href="#ofertas" className="nav-link">Nuestros Productos</a>
+          <a href="#productos" className="nav-link">Vehiculos</a>
           <a href="#ubicacion" className="nav-link">Información de contacto</a>
+          {/*<a href="#marcas" className="nav-link">Marcas</a>*/}
+          
+          
+          
         </div>
       </nav>
 
@@ -86,10 +87,10 @@ export default function Header() {
           </div>
 
           <div className="mobile-nav">
-            <a href="#productos" className="mobile-nav-item">Vehiculos</a>
-            <a href="#marcas" className="mobile-nav-item">Marcas</a>
             <a href="#conocenos" className="mobile-nav-item">Conócenos</a>
-            <a href="#ofertas" className="mobile-nav-item">Ofertas</a>
+            <a href="#ofertas" className="mobile-nav-item">Nuestros Productos</a>
+            <a href="#productos" className="mobile-nav-item">Vehiculos</a>
+            {/*<a href="#marcas" className="mobile-nav-item">Marcas</a>*/}
             <a href="#ubicacion" className="mobile-nav-item">Información de contacto</a>
             {/* <a href="#contacto" className="mobile-nav-item">
               <Phone size={16} /> Contacto
